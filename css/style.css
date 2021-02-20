@@ -1,0 +1,56 @@
+body {
+  margin: 30px;
+}
+
+.btn {
+  position: relative;
+  display: inline-flex;
+  border: none;
+  margin: 0;
+  padding: 10px 30px;
+  border-radius: 3px;
+  color: salmon;
+  background-color: teal;
+  cursor: pointer;
+
+  overflow: hidden;
+  transition: background-color 250ms linear, color 250ms linear;
+}
+
+.btn:after,
+.btn::before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-size: contain;
+  transition: transform 250ms linear;
+}
+
+.btn:after {
+  margin-left: 10px;
+  background-image: url(../img/instagram.svg);
+}
+
+.btn::before {
+  position: absolute;
+  top: 50%;
+  right: 30px;
+  background-image: url(../img/twitter.svg);
+
+  transform: translateY(calc(-50% + 35px));
+}
+
+.btn:hover::after {
+  transform: translateY(-35px);
+}
+
+.btn:hover::before {
+  transform: translateY(-50%);
+}
+
+.btn:hover,
+.btn:focus {
+  background-color: salmon;
+  color: teal;
+}
